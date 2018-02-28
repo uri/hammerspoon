@@ -1,7 +1,9 @@
-hs.grid.MARGINX = 5
-hs.grid.MARGINY = 5
-hs.grid.GRIDWIDTH = 2
-hs.grid.GRIDHEIGHT = 2
+require('move_space')
+
+hs.grid.MARGINX = 0
+hs.grid.MARGINY = 0
+hs.grid.GRIDWIDTH = 3
+hs.grid.GRIDHEIGHT = 3
 
 hs.window.animationDuration = 0
 -- hotkey mash
@@ -84,9 +86,28 @@ hs.hotkey.bind(mash, 'A', function()
     alacritty:kill9()
   end
   hs.timer.doAfter(1, function()
-    hs.application.open("Alacritty")
+    hs.application.open("/Applications/Alacritty.app")
     hs.timer.doAfter(1, function()
+      alacritty = hs.application.find("Alacritty")
       hs.grid.maximizeWindow(alacritty:focusedWindow())
     end)
+  end)
+end)
+
+-- Hammer soon autofill
+delay = 1
+hs.hotkey.bind(mash, '7', function()
+  hs.timer.doAfter(delay, function()
+    hs.execute('/Users/uri/dev/python/autogui/env/bin/python3 /Users/uri/dev/python/autogui/recurly_autogui.py')
+  end)
+end)
+hs.hotkey.bind(mash, 'pad7', function()
+  hs.timer.doAfter(delay, function()
+    hs.execute('/Users/uri/dev/python/autogui/env/bin/python3 /Users/uri/dev/python/autogui/recurly_autogui.py')
+  end)
+end)
+hs.hotkey.bind(mash, 'pad8', function()
+  hs.timer.doAfter(delay, function()
+    hs.execute('env RECURLY_ALT_START=1 /Users/uri/dev/python/autogui/env/bin/python3 /Users/uri/dev/python/autogui/recurly_autogui.py')
   end)
 end)
