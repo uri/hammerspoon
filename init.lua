@@ -95,19 +95,19 @@ hs.hotkey.bind(mash, 'A', function()
 end)
 
 -- Hammer soon autofill
-delay = 1
+delay = 0
 hs.hotkey.bind(mash, '7', function()
   hs.timer.doAfter(delay, function()
-    hs.execute('/Users/uri/dev/python/autogui/env/bin/python3 /Users/uri/dev/python/autogui/recurly_autogui.py')
+    hs.execute('/Users/uri/dev/plugins/autogui-scripts/env/bin/python3 /Users/uri/dev/plugins/autogui-scripts/recurly_autogui.py')
   end)
 end)
 hs.hotkey.bind(mash, 'pad7', function()
   hs.timer.doAfter(delay, function()
-    hs.execute('/Users/uri/dev/python/autogui/env/bin/python3 /Users/uri/dev/python/autogui/recurly_autogui.py')
+    hs.execute('/Users/uri/dev/plugins/autogui-scripts/env/bin/python3 /Users/uri/dev/plugins/autogui-scripts/recurly_autogui.py')
   end)
 end)
 hs.hotkey.bind(mash, 'pad8', function()
   hs.timer.doAfter(delay, function()
-    hs.execute('env RECURLY_ALT_START=1 /Users/uri/dev/python/autogui/env/bin/python3 /Users/uri/dev/python/autogui/recurly_autogui.py')
+    hs.execute('env RECURLY_ALT_START=1 /Users/uri/dev/plugins/autogui-scripts/env/bin/python3 /Users/uri/dev/plugins/autogui-scripts/recurly_autogui.py')
   end)
 end)
